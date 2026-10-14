@@ -78,5 +78,11 @@ There is no build command.
 
 ## License
 
-Copyright © Jimmy Wong. All rights reserved. The site's text, images and design are mine; please don't reuse them as your own.
-If you'd like to borrow a technique, feel free to reach out via [jwong.org](https://jwong.org/#contact).
+**Code:** the HTML, CSS and JavaScript are released under the [MIT License](LICENSE). You are free to reuse and adapt them,
+as long as you keep the copyright notice.
+
+**Content is not covered by the MIT License.** All rights reserved. This means my personal content: the text (bio,
+experience, project write-ups), resume, name, photos, logo and business card design. Please do not copy it or present it as your own.
+If you build your own site from this code, replace all of it with yours.
+
+Questions? Reach out via [jwong.org](https://jwong.org/#contact).
