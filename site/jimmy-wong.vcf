@@ -1,0 +1,12 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Wong;Jimmy;;;
+FN:Jimmy Wong
+TITLE:IT, Systems & Cloud Engineer
+EMAIL;TYPE=INTERNET,WORK:Jimmy.Wong@jwong.org
+URL:https://jwong.org
+URL:https://www.linkedin.com/in/wongjimmy545
+URL:https://github.com/jwong545
+ADR;TYPE=WORK:;;;Chicago;IL;;US
+NOTE:Resume: https://resume.jwong.org
+END:VCARD

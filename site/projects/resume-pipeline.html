@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Resume Pipeline | Jimmy Wong</title>
+  <meta name="description" content="Resume Pipeline: builds my resume PDF from YAML with GitHub Actions and publishes it automatically.">
+  <meta name="theme-color" content="#0c0c0c">
+  <link rel="canonical" href="https://jwong.org/projects/resume-pipeline">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../main.js" defer></script>
+</head>
+<body id="top">
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="bar">
+    <a class="prompt" href="../index.html">jimmy@wong:~$</a>
+    <nav aria-label="Primary">
+      <a href="../index.html#about">about</a>
+      <a href="../index.html#skills">skills</a>
+      <a href="../index.html#experience">experience</a>
+      <a href="../index.html#projects" aria-current="page">projects</a>
+      <a href="../index.html#contact">contact</a>
+    </nav>
+  </header>
+
+  <main id="main" class="post">
+    <p class="crumbs"><a href="../index.html#projects">~/projects</a> / resume-pipeline</p>
+    <h1>Resume Pipeline</h1>
+    <p class="byline">2026</p>
+    <ul class="tags"><li>GitHub Actions</li><li>YAML</li><li>CI/CD</li><li>Cloudflare Pages</li></ul>
+
+    <h2>overview</h2>
+    <p>My resume is data, not a document. I edit one YAML file, push to GitHub, and a workflow builds the PDF and publishes it. This site and the PDF link always serve the latest version.</p>
+
+    <h2>how it works</h2>
+    <pre>resume.yaml  ->  git push  ->  GitHub Actions builds PDF
+                                      |
+                       commit jimmy.wong.resume.pdf
+                                      |
+                  Cloudflare Pages deploys the site
+                                      |
+        jwong.org  +  resume.jwong.org (always the newest PDF)</pre>
+
+    <h2>why</h2>
+    <ul>
+      <li>One source of truth: no copy-and-paste between a web page and a PDF.</li>
+      <li>Every change is versioned in Git, so I can see exactly what changed and when.</li>
+      <li>Publishing is hands-off: edit, push, done.</li>
+    </ul>
+
+    <h2>details</h2>
+    <ul>
+      <li>[PDF tool used: e.g. headless Chrome, LaTeX, WeasyPrint.]</li>
+      <li>[Anything tricky: fonts, page breaks, keeping the PDF text searchable for recruiters' ATS tools.]</li>
+    </ul>
+
+    <p class="note">Source code: <a href="https://github.com/jwong545/resume" target="_blank" rel="noopener noreferrer">github.com/jwong545/resume</a></p>
+
+    <nav class="nextprev" aria-label="More projects">
+      <a class="btn" href="homelab-v2.html">Homelab v2</a>
+      <a class="btn" href="../index.html#projects">all projects</a>
+    </nav>
+  </main>
+
+  <footer>
+    <p class="dim">&copy; <span id="year">2026</span> Jimmy Wong &middot; <a href="../index.html">home</a> &middot; <a href="../card.html">business card</a></p>
+  </footer>
+  <a id="totop" class="totop" href="#top" hidden aria-label="Back to top">&uarr; top</a>
+</body>
+</html>

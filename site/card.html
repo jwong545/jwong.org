@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Business Card | Jimmy Wong</title>
+  <meta name="description" content="Jimmy Wong's business card with a QR code to jwong.org. Print-ready PDF and saveable contact.">
+  <meta name="theme-color" content="#0c0c0c">
+  <link rel="canonical" href="https://jwong.org/card">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="card.css">
+  <script src="main.js" defer></script>
+</head>
+<body id="top">
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="bar">
+    <a class="prompt" href="index.html">jimmy@wong:~$</a>
+    <nav aria-label="Primary">
+      <a href="index.html#about">about</a>
+      <a href="index.html#projects">projects</a>
+      <a href="index.html#contact">contact</a>
+      <a href="card.html" aria-current="page">card</a>
+    </nav>
+  </header>
+
+  <main id="main" class="cardpage">
+    <p class="dim">$ cat business-card</p>
+    <h1>business card</h1>
+    <p>Scan the QR code to open my site. Standard US size, 3.5 x 2 inches.</p>
+
+    <div class="sides">
+      <div>
+        <p class="side-label">front</p>
+        <div class="bizcard front">
+          <div class="info">
+            <p class="name">Jimmy Wong</p>
+            <p class="role">IT / Systems / Cloud Engineer</p>
+            <ul class="lines">
+              <li><span>@</span> Jimmy.Wong@jwong.org</li>
+              <li><span>~</span> jwong.org</li>
+              <li><span>in/</span>wongjimmy545</li>
+              <li><span>#</span> Chicago, IL</li>
+            </ul>
+          </div>
+          <div class="qr">
+            <img src="qr.svg" width="115" height="115" alt="QR code that opens jwong.org">
+            <small>scan: jwong.org</small>
+          </div>
+        </div>
+      </div>
+      <div>
+        <p class="side-label">back</p>
+        <div class="bizcard back">
+          <p class="prompt-line">jimmy@wong:~$</p>
+          <p class="big">jwong.org<span class="cur" aria-hidden="true">_</span></p>
+          <p class="tag">resume.jwong.org &middot; cloud &middot; systems &middot; infrastructure</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="cardactions">
+      <a class="btn primary" href="business-card.pdf" download>&gt; download print-ready PDF</a>
+      <a class="btn" href="jimmy-wong.vcf" download>&gt; save contact (.vcf)</a>
+      <a class="btn" href="index.html#contact">&gt; contact page</a>
+    </p>
+
+    <h2><span class="hash">##</span> printing tips</h2>
+    <ul class="tips">
+      <li>The PDF has two pages: front, then back, each 3.5 x 2 inches.</li>
+      <li>Most print shops want a 0.125 inch bleed on the colored back. If yours does, ask them to extend the background, or tell me and I will export a bleed version.</li>
+      <li>Test the QR code by scanning a printed proof before you order a full batch.</li>
+    </ul>
+  </main>
+
+  <footer>
+    <p class="dim">&copy; <span id="year">2026</span> Jimmy Wong &middot; <a href="index.html">home</a></p>
+  </footer>
+  <a id="totop" class="totop" href="#top" hidden aria-label="Back to top">&uarr; top</a>
+</body>
+</html>

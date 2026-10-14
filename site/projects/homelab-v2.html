@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Homelab v2 | Jimmy Wong</title>
+  <meta name="description" content="Homelab v2: an open-source rebuild running redundant, production-style services, a portfolio site and an intranet dashboard.">
+  <meta name="theme-color" content="#0c0c0c">
+  <link rel="canonical" href="https://jwong.org/projects/homelab-v2">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../main.js" defer></script>
+</head>
+<body id="top">
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="bar">
+    <a class="prompt" href="../index.html">jimmy@wong:~$</a>
+    <nav aria-label="Primary">
+      <a href="../index.html#about">about</a>
+      <a href="../index.html#skills">skills</a>
+      <a href="../index.html#experience">experience</a>
+      <a href="../index.html#projects" aria-current="page">projects</a>
+      <a href="../index.html#contact">contact</a>
+    </nav>
+  </header>
+
+  <main id="main" class="post">
+    <p class="crumbs"><a href="../index.html#projects">~/projects</a> / homelab-v2</p>
+    <h1>Homelab v2</h1>
+    <p class="byline">2026-09 to present &middot; ongoing</p>
+    <ul class="tags"><li>Proxmox VE</li><li>KVM</li><li>Nginx</li><li>Ansible</li><li>HTTPS</li><li>Offsite backups</li></ul>
+
+    <h2>overview</h2>
+    <p>I rebuilt my homelab on open-source infrastructure so I can self-host production-style services. It currently runs my personal portfolio site (jwong.org) and an intranet with a dashboard.</p>
+
+    <h2>goals</h2>
+    <ul>
+      <li>Keep critical services up when a single node fails.</li>
+      <li>Make every deployment repeatable instead of hand-configured.</li>
+      <li>Protect data against hardware failure with offsite backups.</li>
+      <li>Serve everything over HTTPS with sensible access rules.</li>
+    </ul>
+
+    <h2>what i built</h2>
+    <ul>
+      <li>Redundant critical services on [Proxmox VE / KVM / containers], so a single node failure does not take them down.</li>
+      <li>Automated [deployments / configuration] with [Ansible / GitHub Actions] to keep builds repeatable.</li>
+      <li>Weekly backups to an offsite location to protect against hardware failure and data loss.</li>
+      <li>Sites served over HTTPS behind [Nginx / Cloudflare] with [firewall / access rules].</li>
+    </ul>
+
+    <h2>architecture</h2>
+    <p>[Describe the layout in a few sentences: how many nodes, how services fail over, how traffic reaches them.]</p>
+    <pre>internet -> [Cloudflare / reverse proxy] -> [services on node A / node B]
+                                   |
+                       [weekly offsite backup]</pre>
+
+    <h2>results &amp; lessons</h2>
+    <ul>
+      <li>[A number: uptime, restore time, services hosted.]</li>
+      <li>[Something that broke and how you fixed it.]</li>
+      <li>[What you would do differently.]</li>
+    </ul>
+
+    <p class="note">Earlier version: <a href="homelab-v1.html">Homelab v1</a> (2020 to 2024).</p>
+
+    <nav class="nextprev" aria-label="More projects">
+      <a class="btn" href="homelab-v1.html">&larr; Homelab v1</a>
+      <a class="btn" href="../index.html#projects">all projects</a>
+    </nav>
+  </main>
+
+  <footer>
+    <p class="dim">&copy; <span id="year">2026</span> Jimmy Wong &middot; <a href="../index.html">home</a> &middot; <a href="../card.html">business card</a></p>
+  </footer>
+  <a id="totop" class="totop" href="#top" hidden aria-label="Back to top">&uarr; top</a>
+</body>
+</html>

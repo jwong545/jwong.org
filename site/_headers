@@ -1,0 +1,18 @@
+# Cloudflare Pages reads this file and adds these headers to every response.
+# Cloudflare already provides HTTPS; these headers harden it further.
+/*
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  Content-Security-Policy: default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'none'; form-action 'none'; base-uri 'none'; frame-ancestors 'none'; upgrade-insecure-requests
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Resource-Policy: same-origin
+
+# Always serve the latest resume PDF (no stale cached copy).
+# Shown inline in the browser at resume.jwong.org; the "download" links on the site still save it as a file.
+/jimmy.wong.resume.pdf
+  ! Content-Security-Policy
+  Cache-Control: public, max-age=0, must-revalidate
+  X-Robots-Tag: noindex

@@ -1,0 +1,65 @@
+/* Business card: 3.5in x 2in (US standard). Everything is sized in em so the card scales
+   on screen and prints at exact size (font-size 12pt => 21em = 3.5in). */
+.cardpage { max-width: 960px; margin: 0 auto; padding: 2rem var(--gutter) 1rem; }
+.cardpage h1 { font-size: clamp(1.7rem, 8vw, 2.4rem); }
+.sides { display: grid; gap: 1.5rem; justify-items: start; margin: 1.5rem 0; }
+.side-label { margin: 0 0 .4rem; color: var(--dim); font-size: .85rem; }
+
+.bizcard {
+  --bc: 16px;               /* 16px = 3.5in x 2in on screen at 96 dpi */
+  font-size: var(--bc);
+  width: 21em; height: 12em;
+  position: relative; overflow: hidden;
+  border-radius: .35em; border: 1px solid var(--line);
+  font-family: var(--mono); line-height: 1.3;
+  overflow-wrap: normal;
+}
+
+/* front: black with orange text, QR on a light tile for reliable scanning */
+.bizcard.front { background: #0c0c0c; color: #e8e2da; padding: 1em; display: flex; gap: .9em; }
+.bizcard.front .info { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.bizcard .name { margin: 0; font-size: 1.55em; line-height: 1.1; color: #ff8c1a; font-weight: 700; }
+.bizcard .role { margin: .35em 0 0; font-size: .6em; color: #ffb15c; line-height: 1.35; }
+.bizcard .lines { margin: auto 0 0; padding: 0; list-style: none; font-size: .64em; line-height: 1.55; }
+.bizcard .lines span { color: #ff8c1a; }
+.bizcard .qr { flex: none; align-self: center; width: 7.2em; text-align: center; }
+.bizcard .qr img { display: block; width: 7.2em; height: 7.2em; border-radius: .3em; }
+.bizcard .qr small { display: block; margin-top: .35em; font-size: .52em; color: #9a9187; }
+
+/* back: solid orange */
+.bizcard.back { background: #ff8c1a; color: #0c0c0c; padding: 1em; display: flex; flex-direction: column; justify-content: center; }
+.bizcard.back .prompt-line { font-size: .75em; font-weight: 700; margin: 0; }
+.bizcard.back .big { margin: .25em 0 .3em; font-size: 2.1em; line-height: 1; font-weight: 700; }
+.bizcard.back .tag { margin: 0; font-size: .62em; }
+.bizcard.back .cur { animation: blink 1.1s steps(1) infinite; }
+
+.cardactions { display: grid; gap: .6rem; margin: 1rem 0 1.5rem; }
+.tips { max-width: 70ch; }
+
+@media (min-width: 640px) {
+  .bizcard { --bc: 19px; }
+  .cardactions { display: flex; flex-wrap: wrap; }
+}
+/* two cards side by side need about 860px, so wait for a wider screen */
+@media (min-width: 900px) {
+  .sides { grid-template-columns: repeat(2, max-content); gap: 2rem; }
+}
+
+/* ---- print: only the two card sides, one per page, exact size ---- */
+@page { size: 3.5in 2in; margin: 0; }
+@media print {
+  html, body { background: #fff; }
+  .bar, .skip, .totop, footer, .cardpage > :not(.sides) { display: none !important; }
+  .cardpage { padding: 0; max-width: none; margin: 0; }
+  .sides { display: block; margin: 0; }
+  .side-label { display: none; }
+  .bizcard {
+    --bc: 12pt;             /* 12pt = 16px, so the card is exactly 3.5in x 2in */
+    border: 0; border-radius: 0; margin: 0;
+    break-after: page; page-break-after: always;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  .sides > div:last-child .bizcard { break-after: auto; page-break-after: auto; }
+}
+
+@media (prefers-reduced-motion: reduce) { .bizcard.back .cur { animation: none; } }
