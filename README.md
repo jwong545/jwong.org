@@ -55,16 +55,6 @@ site/                 # everything that gets published
   robots.txt  sitemap.xml  favicon.svg  og-image.png
 ```
 
-## Run it locally
-
-No install needed. From the repo root:
-
-```bash
-python3 -m http.server 8000 --directory site
-```
-
-Then open <http://localhost:8000>. (Security headers only apply on Cloudflare, not in this local server.)
-
 ## Deploy
 
 Pushing to `main` deploys the site on Cloudflare, publishing the `site/` folder. Other branches get a preview URL.
