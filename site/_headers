@@ -12,7 +12,7 @@
 
 # Always serve the latest resume PDF (no stale cached copy).
 # Shown inline in the browser at resume.jwong.org; the "download" links on the site still save it as a file.
-/jimmy.wong.resume.pdf
+/resume.pdf
   ! Content-Security-Policy
   Cache-Control: public, max-age=0, must-revalidate
   X-Robots-Tag: noindex
